@@ -20,7 +20,7 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let cityElement = document.querySelector("#current-city"); 
+  let cityElement = document.querySelector("#current-city");
   let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.city;
@@ -61,23 +61,25 @@ function formatDate(date) {
 }
 
 function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
-  let forecast = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = "";
 
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"]
-
-  days.forEach(function(day){
-    forecast.innerHTML = `
-    <div class="forecast"> 
-    <div class="forecast-item"> 
-    <div class="forecast-date">Tue</div>
-    <div class="forecast-icon">☀️</div> 
-    <div class="forecast-temps"> 
-    <div class="forecast-temp"><strong>15°</strong></div>
-    <div class="forecast-temp">9°</div> 
-    </div>
+  days.forEach(function(day) {
+    forecastHTML += `
+      <div class="forecast-item">
+        <div class="forecast-date">${day}</div>
+        <div class="forecast-icon">☀️</div>
+        <div class="forecast-temps">
+          <div class="forecast-temp"><strong>15°</strong></div>
+          <div class="forecast-temp">9°</div>
+        </div>
+      </div>
     `;
   });
+
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -88,7 +90,4 @@ let currentDate = new Date();
 currentDateElement.innerHTML = formatDate(currentDate);
 
 searchCity("Guarulhos");
-
-
-
-
+displayForecast();
