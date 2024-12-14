@@ -30,7 +30,7 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-temperature-icon" />`;
 
-  console.log(response.data);
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -59,8 +59,12 @@ function formatDate(date) {
   let formattedDay = days[day];
   return `${formattedDay} ${hours}:${minutes}`;
 }
+function getForecast (city) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
+  axios(apiUrl).then(displayForecast)
 
-function displayForecast() {
+}
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -90,4 +94,5 @@ let currentDate = new Date();
 currentDateElement.innerHTML = formatDate(currentDate);
 
 searchCity("Guarulhos");
-displayForecast();
+
+
