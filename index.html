@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>My weather App</title>
+</head>
+<body>
+    <div class="weather-app">
+      <header>
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-input"
+            id="search-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="current-city"></h1>
+            <p class="current-details">
+              <span id="current-date"></span>, <span id="description"></span> <br />
+              Humidity: <strong id="humidity"></strong>, Wind: <strong id="wind"></strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon" id="icon"></span>
+            <span class="current-temperature-value" id="tempValue"></span>
+            <span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+        <div class="forecast">
+          <div class="forecast-item">
+            <div class="forecast-date">Tue</div>
+            <div class="forecast-icon">☀️</div>
+            <div class="forecast-temps">
+              <div class="forecast-temp"><strong>15°</strong></div>
+              <div class="forecast-temp">9°</div>
+            </div>
+          </div>
+          <div class="forecast-item">
+            <div class="forecast-date">Wed</div>
+            <div class="forecast-icon">🌦️</div>
+            <div class="forecast-temps">
+              <div class="forecast-temp"><strong>14°</strong></div>
+              <div class="forecast-temp">8°</div>
+            </div>
+          </div>
+          <div class="forecast-item">
+            <div class="forecast-date">Thu</div>
+            <div class="forecast-icon">🌧️</div>
+            <div class="forecast-temps">
+              <div class="forecast-temp"><strong>13°</strong></div>
+              <div class="forecast-temp">7°</div>
+            </div>
+          </div>
+          <div class="forecast-item">
+            <div class="forecast-date">Fri</div>
+            <div class="forecast-icon">🌤️</div>
+            <div class="forecast-temps">
+              <div class="forecast-temp"><strong>16°</strong></div>
+              <div class="forecast-temp">10°</div>
+            </div>
+          </div>
+          <div class="forecast-item">
+            <div class="forecast-date">Sat</div>
+            <div class="forecast-icon">☀️</div>
+            <div class="forecast-temps">
+              <div class="forecast-temp"><strong>17°</strong></div>
+              <div class="forecast-temp">11°</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/mbng1983" target="_blank">Bea Garcia</a> and is
+          <a href="https://github.com/mbng1983/Plus-W7" target="_blank"> on GitHub</a> and
+          <a href="https://beagarcia-w7homework.netlify.app/" target="_blank">hosted on Netlify</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+<script src="src/index.js"></script>
+</html>
