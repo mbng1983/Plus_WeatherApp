@@ -63,17 +63,21 @@ function formatDate(date) {
 function displayForecast() {
 
   let forecast = document.querySelector("#forecast");
-  forecast.innerHTML = `
-<div class="forecast"> 
-<div class="forecast-item"> 
-<div class="forecast-date">Tue</div>
-<div class="forecast-icon">☀️</div> 
-<div class="forecast-temps"> 
-<div class="forecast-temp"><strong>15°</strong></div>
-<div class="forecast-temp">9°</div> 
-</div>
-`;
 
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"]
+
+  days.forEach(function(day){
+    forecast.innerHTML = `
+    <div class="forecast"> 
+    <div class="forecast-item"> 
+    <div class="forecast-date">Tue</div>
+    <div class="forecast-icon">☀️</div> 
+    <div class="forecast-temps"> 
+    <div class="forecast-temp"><strong>15°</strong></div>
+    <div class="forecast-temp">9°</div> 
+    </div>
+    `;
+  });
 }
 
 let searchForm = document.querySelector("#search-form");
