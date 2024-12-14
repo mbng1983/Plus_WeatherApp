@@ -34,12 +34,16 @@ header {
 .search-button {
   margin-left: 5px;
   font-size: 16px;
-  background-color: #5585b5;
-  color: white;
+  background: linear-gradient(45deg, #5585b5, #74c7ec);
   border: none;
+  color: white;
   padding: 20px;
   line-height: 1;
   border-radius: 5px;
+}
+
+.search-button:hover {
+  background: linear-gradient(45deg, #74c7ec,#5585b5);
 }
 
 main {
